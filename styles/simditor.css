@@ -125,6 +125,21 @@
       outline: none;
       background: transparent;
       resize: none; }
+    .simditor .simditor-wrapper .doc-placeholder {
+      width: 840px;
+      height: 50px;
+      margin: 0 auto; }
+      .simditor .simditor-wrapper .doc-placeholder span {
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        border-bottom: 1px solid #ccc;
+        margin-top: 20px; }
+        .simditor .simditor-wrapper .doc-placeholder span.left {
+          border-right: 1px solid #ccc; }
+        .simditor .simditor-wrapper .doc-placeholder span.right {
+          border-left: 1px solid #ccc;
+          float: right; }
     .simditor .simditor-wrapper .simditor-placeholder {
       display: none !important;
       position: absolute;
@@ -156,7 +171,7 @@
         bottom: 0;
         left: 0; }
   .simditor .simditor-body {
-    padding: 22px 15px 40px;
+    padding: 0;
     min-height: 300px;
     outline: none;
     cursor: text;
@@ -221,16 +236,16 @@
           background: #cfcfcf;
           width: 1px;
           height: 18px;
-          margin: 6px 5px;
+          margin: 8.5px 5px;
           vertical-align: middle; }
         .simditor .simditor-toolbar > ul > li > .toolbar-item {
           display: inline-block;
-          width: 30px;
-          height: 30px;
+          width: 40px;
+          height: 35px;
           outline: none;
           color: #333333;
           font-size: 15px;
-          line-height: 30px;
+          line-height: 35px;
           vertical-align: middle;
           text-align: center;
           text-decoration: none; }
@@ -287,7 +302,7 @@
     .simditor .simditor-toolbar .toolbar-menu {
       display: none;
       position: absolute;
-      top: 30px;
+      top: 35px;
       left: 0;
       z-index: 21;
       background: #ffffff;
@@ -296,7 +311,7 @@
       .simditor .simditor-toolbar .toolbar-menu:before {
         content: '';
         display: block;
-        width: 30px;
+        width: 40px;
         height: 4px;
         background: #ffffff;
         position: absolute;

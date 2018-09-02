@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
-$simditor-button-height: 30px;
-$simditor-button-width: 30px;
+$simditor-button-height: 35px;
+$simditor-button-width: 40px;
 $simditor-body-width: 800px;
 
 .simditor {
@@ -26,6 +26,30 @@ $simditor-body-width: 800px;
       outline: none;
       background: transparent;
       resize: none;
+    }
+
+    .doc-placeholder
+    {
+      width: $simditor-body-width + 40px;
+      height: 50px;
+      margin: 0 auto;
+
+      span {
+          width: 20px;
+          height: 20px;
+          display: inline-block;
+          border-bottom: 1px solid #ccc;
+          margin-top: 20px;
+
+          &.left {
+            border-right: 1px solid #ccc;
+          }
+
+          &.right {
+            border-left: 1px solid #ccc;
+            float: right;
+          }
+        }
     }
 
     .simditor-placeholder {
@@ -70,7 +94,7 @@ $simditor-body-width: 800px;
   }
 
   .simditor-body {
-    padding: 22px 15px 40px;
+    padding: 0;
     min-height: 300px;
     outline: none;
     cursor: text;
