@@ -1,11 +1,13 @@
 @charset "UTF-8";
 
-$simditor-button-height: 40px;
-$simditor-button-width: 46px;
+$simditor-button-height: 30px;
+$simditor-button-width: 30px;
+$simditor-body-width: 800px;
 
 .simditor {
   position: relative;
   border: 1px solid #c9d8db;
+  min-width: $simditor-body-width;
 
   .simditor-wrapper {
     position: relative;
@@ -27,7 +29,7 @@ $simditor-button-width: 46px;
     }
 
     .simditor-placeholder {
-      display: none;
+      display: none !important;
       position: absolute;
       left: 0;
       z-index: 0;
@@ -75,6 +77,8 @@ $simditor-button-width: 46px;
     position: relative;
     z-index: 1;
     background: transparent;
+    width: $simditor-body-width;
+    margin: 0 auto;
 
     a.selected {
       background: #b3d4fd;
@@ -140,20 +144,21 @@ $simditor-button-width: 46px;
 
     & > ul {
       margin: 0;
-      padding: 0 0 0 6px;
+      padding: 8px;
       list-style: none;
 
       & > li {
         position: relative;
         display: inline-block;
         font-size: 0;
+        margin: 0 4px;
 
         & > span.separator {
           display: inline-block;
           background: #cfcfcf;
           width: 1px;
           height: 18px;
-          margin: ($simditor-button-height - 18px) / 2 15px;
+          margin: ($simditor-button-height - 18px) / 2 5px;
           vertical-align: middle;
         }
 
@@ -176,6 +181,10 @@ $simditor-button-width: 46px;
               display: inline;
               line-height: normal;
             }
+          }
+
+          &:hover {
+            background: #fbfbfb;
           }
 
           &:hover span {
@@ -566,7 +575,7 @@ $simditor-button-width: 46px;
 
   p, div {
     word-wrap: break-word;
-    margin: 0 0 15px 0;
+    margin: 1em 0;
     color: #333;
     word-wrap: break-word;
   }
@@ -615,13 +624,9 @@ $simditor-button-width: 46px;
   }
 
   blockquote {
-    border-left: 6px solid #ddd;
+    background: #f3f4f5;
     padding: 5px 0 5px 10px;
-    margin: 15px 0 15px 15px;
-
-    & > :first-child {
-      margin-top: 0;
-    }
+    margin: 15px 0 15px 0px;
   }
 
   code {
@@ -695,7 +700,7 @@ $simditor-button-width: 46px;
 
 
   img {
-    margin: 0 5px;
+    //margin: 0 5px;
     vertical-align: middle;
   }
 
