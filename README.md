@@ -13,6 +13,8 @@ Supported Browsers: IE10+、Chrome、Firefox、Safari.
 
 Demo and docs can be found [here](http://simditor.tower.im/).
 
+====分割线=========================================
+
 
 #### 样式更新说明(2018-9-2)
 
@@ -23,9 +25,15 @@ Demo and docs can be found [here](http://simditor.tower.im/).
 * *增加文档宽度标识* 
 * *字数统计*
 
+![效果图](https://github.com/shungdawei/simditor/blob/master/captures/Snipaste_2018-09-02_17-57-04.png)
+
 #### 代码使用
 
-需本项目中的样式[simditor.css](https://github.com/shungdawei/simditor/blob/master/styles/simditor.css)配合使用，文档宽度为 800px。如果需要调整的可以修改[editor.scss](https://github.com/shungdawei/simditor/blob/master/styles/editor.scss)中 `$simditor-body-width`值。
+由于不熟悉Simditor的JS代码，没集成，使用稍微麻烦点。
+
+首先需要引用本项目中的样式[simditor.css](https://github.com/shungdawei/simditor/blob/master/styles/simditor.css)配合使用，文档宽度定义为 800px。如果需要调整的可以修改[editor.scss](https://github.com/shungdawei/simditor/blob/master/styles/editor.scss)中 `$simditor-body-width`值或直接修改simditor.css，搜索800px，840px替换。
+
+然后在初始化的方法里加入相关代码。下面代码是在官网示例的基础上做的调整，供参考。
 
 ```
 (function() {
@@ -48,7 +56,7 @@ Demo and docs can be found [here](http://simditor.tower.im/).
       } : false
     });
 
-    // 文档宽度标识
+    // 1、文档宽度标识
     var docPlaceholderHTML = $("<div class=\"doc-placeholder\"></div>");
     docPlaceholderHTML.append("<span class=\"left\"></span>");
     docPlaceholderHTML.append("<span class=\"right\"></span>");
@@ -61,7 +69,7 @@ Demo and docs can be found [here](http://simditor.tower.im/).
       });
     }
 
-    // 监听valuechanged事件，通过正则获取长度
+    // 2、监听valuechanged事件，通过正则获取长度
     editor.on("valuechanged",function(e,src){
       var value = editor.getValue();
       var text = value.replace(/<\/?[^>]*>/g,'').replace(/[ | ]*\n/g,'\n').replace(/\n[\s| | ]*\r/g,'\n').replace(/&nbsp;/ig,'');
@@ -72,5 +80,3 @@ Demo and docs can be found [here](http://simditor.tower.im/).
 }).call(this);
 
 ```
-
-![效果图](https://github.com/shungdawei/simditor/blob/master/captures/Snipaste_2018-09-02_17-57-04.png)
