@@ -15,6 +15,35 @@ Demo and docs can be found [here](http://simditor.tower.im/).
 
 ====分割线=========================================
 
+#### 样式更新说明(2018-9-5)
+
+> 搭环境太麻烦了，直接暴力调整js和css。
+
+* 修改simditor.js，优化文档模式使用
+* placeholder回来了
+* 调整simditor.css部分样式
+
+**使用说明**
+
+默认启用文档模式，文档宽度为 `800px`。可根据需要在 `option` 中配置。
+
+```
+var editor = new Simditor({
+      textarea: $('#txt-content'),
+      placeholder: 'Simditor魔改，这里输入文本...',
+      toolbar: toolbar,
+      pasteImage: true,
+
+      docMode: true,//文档模式
+      docWidth: 800,//文档宽度
+
+      defaultImage: 'plugins/simditor/placeholder.png',
+      upload: location.search === '?upload' ? {
+        url: '/upload'
+      } : false
+    })
+
+```
 
 #### 样式更新说明(2018-9-2)
 
