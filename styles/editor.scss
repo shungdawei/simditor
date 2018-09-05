@@ -1,13 +1,11 @@
 @charset "UTF-8";
 
-$simditor-button-height: 35px;
-$simditor-button-width: 40px;
-$simditor-body-width: 800px;
+$simditor-button-height: 40px;
+$simditor-button-width: 46px;
 
 .simditor {
   position: relative;
   border: 1px solid #c9d8db;
-  min-width: $simditor-body-width;
 
   .simditor-wrapper {
     position: relative;
@@ -28,32 +26,8 @@ $simditor-body-width: 800px;
       resize: none;
     }
 
-    .doc-placeholder
-    {
-      width: $simditor-body-width + 40px;
-      height: 50px;
-      margin: 0 auto;
-
-      span {
-          width: 20px;
-          height: 20px;
-          display: inline-block;
-          border-bottom: 1px solid #ccc;
-          margin-top: 20px;
-
-          &.left {
-            border-right: 1px solid #ccc;
-          }
-
-          &.right {
-            border-left: 1px solid #ccc;
-            float: right;
-          }
-        }
-    }
-
     .simditor-placeholder {
-      display: none !important;
+      display: none;
       position: absolute;
       left: 0;
       z-index: 0;
@@ -94,15 +68,13 @@ $simditor-body-width: 800px;
   }
 
   .simditor-body {
-    padding: 0;
+    padding: 22px 15px 40px;
     min-height: 300px;
     outline: none;
     cursor: text;
     position: relative;
     z-index: 1;
     background: transparent;
-    width: $simditor-body-width;
-    margin: 0 auto;
 
     a.selected {
       background: #b3d4fd;
@@ -168,21 +140,20 @@ $simditor-body-width: 800px;
 
     & > ul {
       margin: 0;
-      padding: 8px;
+      padding: 0 0 0 6px;
       list-style: none;
 
       & > li {
         position: relative;
         display: inline-block;
         font-size: 0;
-        margin: 0 4px;
 
         & > span.separator {
           display: inline-block;
           background: #cfcfcf;
           width: 1px;
           height: 18px;
-          margin: ($simditor-button-height - 18px) / 2 5px;
+          margin: ($simditor-button-height - 18px) / 2 15px;
           vertical-align: middle;
         }
 
@@ -205,10 +176,6 @@ $simditor-body-width: 800px;
               display: inline;
               line-height: normal;
             }
-          }
-
-          &:hover {
-            background: #fbfbfb;
           }
 
           &:hover span {
@@ -599,7 +566,7 @@ $simditor-body-width: 800px;
 
   p, div {
     word-wrap: break-word;
-    margin: 1em 0;
+    margin: 0 0 15px 0;
     color: #333;
     word-wrap: break-word;
   }
@@ -648,9 +615,13 @@ $simditor-body-width: 800px;
   }
 
   blockquote {
-    background: #f3f4f5;
+    border-left: 6px solid #ddd;
     padding: 5px 0 5px 10px;
-    margin: 15px 0 15px 0px;
+    margin: 15px 0 15px 15px;
+
+    & > :first-child {
+      margin-top: 0;
+    }
   }
 
   code {
@@ -724,7 +695,7 @@ $simditor-body-width: 800px;
 
 
   img {
-    //margin: 0 5px;
+    margin: 0 5px;
     vertical-align: middle;
   }
 
